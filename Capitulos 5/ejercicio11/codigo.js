@@ -1,11 +1,15 @@
-function contar() {
+function init(){
+
+}
+
+function contar() {	
 //Ejercicio 1
 	let enlaces=document.getElementsByTagName("a");
 	document.write("Numero total de enlaces "+enlaces.length);
 	
 //Ejercicio 2
 	let mensaje = "El penultimo enlace apunta a: "+enlaces[enlaces.length-2].href;
- 	document.write("<br/>".mensaje);
+ 	document.write("<br/>"+mensaje);
 
 //Ejercicio 3
  	let cont = 0;
