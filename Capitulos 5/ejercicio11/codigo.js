@@ -2,13 +2,13 @@
 	let resp1,resp2,resp3,resp4;
 	let enlaces = document.getElementsByTagName("a")	
 
-function contarEnl() {	
 	//Ejercicio 1
+function contarEnl() {	
 		resp1 = "Numero total de enlaces "+enlaces.length;
 	}
 
-	function decirEnl(){
 	//Ejercicio 2
+	function decirEnl(){
 		resp2 = "El penultimo enlace apunta a: "+enlaces[enlaces.length-2].href;
 	}
 
