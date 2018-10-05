@@ -1,6 +1,5 @@
 {
-    document.addEventListener("DOMContentLoaded",init);
-    let frase = "La ruta nos aporto otro paso natural";
+   // let frase = "La ruta nos aporto otro paso natural";
 
     function comprobarTexto(frase){
         frase = eliminaCaracter(frase.toLowerCase(),' ');
@@ -22,6 +21,7 @@
     }
 
     function init(){
+        let frase = "La ruta nos aporto otro paso natural";
         let siNo;
         if(comprobarTexto(frase) == true)
             siNo = "si";
@@ -29,4 +29,6 @@
             siNo = "no"; 
         document.getElementById('respuesta').textContent = "La frase "+ frase +" "+siNo+ " es un palídromo";
     }
+    document.addEventListener("DOMContentLoaded",init);
+
 }
