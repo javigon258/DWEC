@@ -17,6 +17,7 @@
    /*pageX pageY*/
   }
   function clickRaton(){
+    document.getElementById('raton').style.backgroundColor = '#FFFFCC';
 
   }
       
@@ -30,8 +31,8 @@
       document.getElementById("teclado").innerHTML += '<p>'+mensajeT[j]+'</p>';
     }
   }
-      document.onkeypress = tecladoM; 
-      document.onmousemove = ratonM;
+  document.onkeypress = tecladoM; 
+  document.onmousemove = ratonM;
 
-      // document.onclick = informacion;
+  document.onclick = clickRaton;
 }
