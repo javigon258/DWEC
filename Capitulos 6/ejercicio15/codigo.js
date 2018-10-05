@@ -10,16 +10,7 @@ let kk;
       //       document.getElementById('info').style.backgroundColor = '#FFFFFF';
       //       var ie = navigator.userAgent.toLowerCase().indexOf('msie')!=-1;
       //       var coordenadaXrelativa, coordenadaYrelativa, coordenadaXabsoluta, coordenadaYabsoluta;
-      //       if(ie) {
-      //         if(document.documentElement && document.documentElement.scrollTop){ 
-      //           coordenadaXabsoluta = evento.clientX + document.documentElement.scrollLeft;
-      //           coordenadaYabsoluta = evento.clientY + document.documentElement.scrollTop;
-      //         }
-      //         else { 
-      //           coordenadaXabsoluta = evento.clientX + document.body.scrollLeft;
-      //           coordenadaYabsoluta = evento.clientY + document.body.scrollTop;
-      //         }
-      //       }
+      //       
       //       else {
       //         coordenadaXabsoluta = evento.pageX;
       //         coordenadaYabsoluta = evento.pageY;
