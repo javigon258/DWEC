@@ -1,23 +1,23 @@
-let refe_letra,refe_cod_letra,posX,posY;
 {
   function tecladoM(tecEve){
+    let refe_letra,refe_cod_letra;
     let caracter = tecEve.charCode;
     let c_carac = tecEve.keyCode;
     let letra = String.fromCharCode(caracter);
     refe_letra = letra;
     refe_cod_letra = c_carac;
-    //document.getElementById("teclado").innerHTML += '<p>'+refe_letra+'</p>';
-    //document.getElementById("teclado").innerHTML += '<h3>'+refe_cod_letra+'</h3>';
     muestraInformacion(['Teclado', 'Carácter ['+refe_letra+']', 'Código ['+refe_cod_letra+']']);
   }
 
   function ratonM(ratEve){
+    let posX,posY;
     posX = ratEve.pageX;
     posY = ratEve.pageY;
-    //document.getElementById("raton").innerHTML += '<p>'+posX+'</p>';
-    //document.getElementById("raton").innerHTML += '<p>'+posY+'</p>';
     muestraInformacion(['Raton', 'PosicionX ['+posX+']', 'PosicionY ['+posY+']']);
    /*pageX pageY*/
+  }
+  function clickRaton(){
+
   }
       
   function muestraInformacion(mensajeR,mensajeT) {
@@ -33,8 +33,5 @@ let refe_letra,refe_cod_letra,posX,posY;
       document.onkeypress = tecladoM; 
       document.onmousemove = ratonM;
 
-      //document.onmousemove = informacion;
-      // document.onkeypress = informacion;
-       
       // document.onclick = informacion;
 }
