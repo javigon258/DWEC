@@ -1,46 +1,39 @@
-let kk;
+let refe_letra,refe_cod_letra,posX,posY;
 {
-    function informacion(elEvento) {
-       // var evento = elEvento || window.event;
-       console.log(elEvento.screenX); 
-       kk= elEvento;
-       
-      //  switch(evento.type) {
-      //     case 'mousemove':
-      //       document.getElementById('info').style.backgroundColor = '#FFFFFF';
-      //       var ie = navigator.userAgent.toLowerCase().indexOf('msie')!=-1;
-      //       var coordenadaXrelativa, coordenadaYrelativa, coordenadaXabsoluta, coordenadaYabsoluta;
-      //       
-      //       else {
-      //         coordenadaXabsoluta = evento.pageX;
-      //         coordenadaYabsoluta = evento.pageY;
-      //       }
-      //       coordenadaXrelativa = evento.clientX;
-      //       coordenadaYrelativa = evento.clientY;
-      //       muestraInformacion(['Ratón', 'Navegador ['+coordenadaXrelativa+', '+coordenadaYrelativa+']', 'Pagina ['+coordenadaXabsoluta+', '+coordenadaYabsoluta+']']);
-      //       break;
-      //     case 'keypress':
-      //       document.getElementById('info').style.backgroundColor = '#CCE6FF';
-      //       var caracter = evento.charCode || evento.keyCode;
-      //       var letra = String.fromCharCode(caracter);
-      //       var codigo = letra.charCodeAt(0);
-      //       muestraInformacion(['Teclado', 'Carácter ['+letra+']', 'Código ['+codigo+']']);
-      //       break;
-      //     case 'click':
-      //       document.getElementById('info').style.backgroundColor = '#FFFFCC';
-      //       break;
-      //   }
+  function tecladoM(tecEve){
+    let caracter = tecEve.charCode;
+    let c_carac = tecEve.keyCode;
+    let letra = String.fromCharCode(caracter);
+    refe_letra = letra;
+    refe_cod_letra = c_carac;
+    //document.getElementById("teclado").innerHTML += '<p>'+refe_letra+'</p>';
+    //document.getElementById("teclado").innerHTML += '<h3>'+refe_cod_letra+'</h3>';
+    muestraInformacion(['Teclado', 'Carácter ['+refe_letra+']', 'Código ['+refe_cod_letra+']']);
+  }
+
+  function ratonM(ratEve){
+    posX = ratEve.pageX;
+    posY = ratEve.pageY;
+    //document.getElementById("raton").innerHTML += '<p>'+posX+'</p>';
+    //document.getElementById("raton").innerHTML += '<p>'+posY+'</p>';
+    muestraInformacion(['Raton', 'PosicionX ['+posX+']', 'PosicionY ['+posY+']']);
+   /*pageX pageY*/
+  }
       
-      }
-       
-      function muestraInformacion(mensaje) {
-        document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
-        for(var i=1; i<mensaje.length; i++) {
-          document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
-        }
-      }
-       
-      document.onmousemove = informacion;
+  function muestraInformacion(mensajeR,mensajeT) {
+    document.getElementById("raton").innerHTML = '<h1>'+mensajeR[0]+'</h1>';
+    for(let i=1; i<mensajeR.length; i++) {
+      document.getElementById("raton").innerHTML += '<p>'+mensajeR[i]+'</p>';
+    }
+    document.getElementById("teclado").innerHTML = '<h1>'+mensajeT[0]+'</h1>';
+    for(let j=1; j<mensajeT.length; j++) {
+      document.getElementById("teclado").innerHTML += '<p>'+mensajeT[j]+'</p>';
+    }
+  }
+      document.onkeypress = tecladoM; 
+      document.onmousemove = ratonM;
+
+      //document.onmousemove = informacion;
       // document.onkeypress = informacion;
        
       // document.onclick = informacion;
