@@ -20,8 +20,8 @@
             + "<body>"
             + "Se han usado los propiedades: "
             + "<ul>"
-            + "<li>heigth = 200</li>"
             + "<li>width = 300</li>"
+            + "<li>heigth = 200</li>"
             + "</ul>"
             + "</body>"
             + "</html>");
