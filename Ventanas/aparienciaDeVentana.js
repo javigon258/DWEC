@@ -13,17 +13,20 @@
     function abrirVentana() {
         let creaVentana = window.open('', '', 'width=300,height=200,top=0,left=0');
         creaVentana.document.write(
-            "<html>"
+            "<html lang='en'>"
             + "<head>"
-            + "<title>Nombre de ejemplo</title>"
+            + "  <meta charset='UTF-8'>"
+            + "  <meta name='viewport' content='width=device-width, initial-scale=1.0'>"
+            + "  <meta http-equiv='X-UA-Compatible' content='ie=edge'>"
+            + "  <title>Nombre de ejemplo</title>"
             + "</head>"
-            + "<body>"
-            + "Se han usado los propiedades: "
-            + "<ul>"
-            + "<li>width = 300</li>"
-            + "<li>heigth = 200</li>"
-            + "</ul>"
-            + "</body>"
+            + "  <body>"
+            + "  Se han usado los propiedades: "
+            + "    <ul>"
+            + "      <li>width = 300</li>"
+            + "      <li>heigth = 200</li>"
+            + "    </ul>"
+            + "  </body>"
             + "</html>");
     }
 
