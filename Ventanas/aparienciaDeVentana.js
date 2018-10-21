@@ -11,8 +11,8 @@
     document.addEventListener("DOMContentLoaded", init)
 
     function abrirVentana() {
-        let nuevaVentana = window.open('', '', 'width=300,height=200,top=0,left=0');
-        nuevaVentana.document.write(
+        let creaVentana = window.open('', '', 'width=300,height=200,top=0,left=0');
+        creaVentana.document.write(
             "<html>"
             + "<head>"
             + "<title>Nombre de ejemplo</title>"
@@ -27,7 +27,7 @@
             + "</html>");
     }
 
-    function init(){
+    function init() {
         let button = document.getElementById("button");
         button.addEventListener('click', abrirVentana);
     }
