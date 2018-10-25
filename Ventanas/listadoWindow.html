@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css">
+    <title>Listado de window y screen</title>
+
+    <script src="listadowindow.js"></script>
+</head>
+<style> .desc{ font-style: italic red;}</style>
+<body>
+    <span id="lista"></span>
+    <ul>1. Muestra en  una lista la siguiente información. Cada uno de las etiquetas &lt;ol&gt; y &lt;li&gt; han de crearse mediante los métodos de document. Explica en cada uno la diferencia con respecto a los demás. </ul>
+    <ol type="1">
+        <li>window.outerHeight</li><span id="desc">obtiene la altura en pixeles de toda la ventana del navegador. Representa el alto de toda la ventana, incluyendo la barra de notificaciones (si se encuentra) y los bordes.</span>
+        <li>window.innerHeight</li><span id="desc">de la ventana de visualización del navegador que incluye, si está renderizada, la barra de desplazamiento horizontal.</span>
+        <li>window.screen.availHeight</li><span id="desc">devuelve la altura de la pantalla del usuario, en píxeles, menos las características de la interfaz, como la barra de tareas de Windows.</span>
+        <li>window.screen.height</li><span id="desc">contiene información sobre la pantalla del usuario.</span>
+        <li>window.document.clientHeight</li><span id="desc"> devuelve la altura visible de un elemento en píxeles, incluido el relleno, pero no el borde, la barra de desplazamiento o el margen.</span>
+    </ol>
+    <input type="button" id="button" value="Abre ventana">
+    <input type="button" id="scrol" value="Desplazar">
+</body>
+</html>
