@@ -17,7 +17,7 @@
     
     function abrirVentana() {
         for (let i = 1; i < 5; i++) {
-            creaVentana = document.open('', 'Ventana' + i , 'width=150','height=100','top=15'+5,'left=10'+5);
+            creaVentana = document.open('', 'Ventana' + i , 'width=200','height=200','top=15'+5,'left=10'+5);
             creaVentana.document.write( 
                 "<html lang='en'>"
                 + "<head>"
