@@ -1,27 +1,58 @@
 {
-    document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("DOMContentLoaded", init);
 
-    let botonResultado,boton0,boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8,boton9;
+  let botonResultado,
+    boton0,
+    boton1,
+    boton2,
+    boton3,
+    boton4,
+    boton5,
+    boton6,
+    boton7,
+    boton8,
+    boton9;
 
-    let botonMenos,botonMas,botonPor,botonDivision,botonIGual;
+  let botonMenos, botonMas, botonPor, botonDivision, botonIGual;
 
-    let botonBorrar,botonComa,botonPorcentaje,botonCE,botonCambiaSigno;
+  let botonBorrar, botonComa, botonPorcentaje, botonCE, botonCambiaSigno;
 
-    function creaCalcu() {
-
-        botonResultado = document.createElement("input");
-        botonResultado.type = "text";
-        botonResultado.id = 'numeros';
-        botonResultado.style = 'margin-left:auto; margin-right: auto; width: 120px; height: 30px;';
-        document.body.appendChild(botonResultado);
-
+  function creaCalcu() {
+    botonResultado = document.createElement("input");
+    botonResultado.type = "text";
+    botonResultado.id = "numeros";
+    botonResultado.style =
+      "margin-left:auto; margin-right: auto; width: 120px; height: 30px;";
+    document.body.appendChild(botonResultado);
+    /*         
         boton0 = document.createElement("button");
         boton0.type = "button";
         boton0.id = '0';
         boton0.style = 'margin-left:auto; margin-right: auto;width:30px;height:20px;';
         boton0.innerText = '0';
         document.body.appendChild(boton0);
-        
+
+        botonCambiaSigno = document.createElement("button");
+        botonCambiaSigno.type = "button";
+        botonCambiaSigno.id = 'cambiaValor';
+        botonCambiaSigno.style = 'margin-left:auto; margin-right: auto;width:30px;height:20px;';
+        botonCambiaSigno.innerText = '+/-';
+        document.body.appendChild(botonCambiaSigno);
+
+        botonComa = document.createElement("button");
+        botonComa.type = "button";
+        botonComa.id = 'coma';
+        botonComa.style = 'margin-left:auto; margin-right: auto;width:30px;height:20px;';
+        botonComa.innerText = ',';
+        document.body.appendChild(botonComa);
+
+        botonIGual = document.createElement("button");
+        botonIGual.type = "button";
+        botonIGual.id = 'igual';
+        botonIGual.style = 'margin-left:auto; margin-right: auto;width:30px;height:20px;';
+        botonIGual.innerText = '=';
+        document.body.appendChild(botonIGual);
+       
         boton1 = document.createElement("button");
         boton1.type = "button";
         boton1.id = '';
@@ -83,15 +114,78 @@
         boton9.id = '9';
         boton9.style = 'margin-left:auto; margin-right: auto;width:30px;height:20px;';
         boton9.innerText = '9';
-        document.body.appendChild(boton9);
-        
-        /*let claseDiv = document.getElementsByClassName("nuevaCalcu");
+        document.body.appendChild(boton9);*/
+
+    /*let claseDiv = document.getElementsByClassName("nuevaCalcu");
         claseDiv.appendChild(boton9);
         document.getElementsByClassName.appendChild(boton9);*/
-    }
+  }
 
-    function init() {
-        let button = document.getElementById("button");
-        button.addEventListener('click', creaCalcu);
-    }
+  function addElement() {
+
+    boton0 = document.createElement("button");
+    boton0.type = "button";
+    boton0.id = '0';
+    boton0.style = 'margin-left: 590px; margin-top: 215px; width:35px; height:25px';
+    boton0.innerText = '0';
+
+    botonCambiaSigno = document.createElement("button");
+    botonCambiaSigno.type = "button";
+    botonCambiaSigno.id = 'cambiaValor';
+    botonCambiaSigno.style = 'margin-left: 10px; margin-top: 215px; width:35px; height:25px';
+    botonCambiaSigno.innerText = '+/-';
+
+    botonComa = document.createElement("button");
+    botonComa.type = "button";
+    botonComa.id = 'coma';
+    botonComa.style = 'margin-left: 10px; margin-top: 215px; width:35px; height:25px';
+    botonComa.innerText = ',';
+
+    botonIGual = document.createElement("button");
+    botonIGual.type = "button";
+    botonIGual.id = 'igual';
+    botonIGual.style = 'margin-left: 10px; margin-top: 215px; width:35px; height:25px';
+    botonIGual.innerText = '=';
+
+    let currentDiv = document.getElementById("nuevaCalcu");
+    document.body.insertBefore(boton0, currentDiv);
+    document.body.insertBefore(botonCambiaSigno, currentDiv);
+    document.body.insertBefore(botonComa, currentDiv);
+    document.body.insertBefore(botonIGual, currentDiv);
+  }
+
+  function fila2(){
+    boton1 = document.createElement("button");
+    boton1.type = "button";
+    boton1.id = '1';
+    boton1.style = 'margin-left: 490px; margin-top: 215px; width:35px; height:25px';
+    boton1.innerText = '1';
+
+   /* boton2 = document.createElement("button");
+    boton2.type = "button";
+    boton2.id = '2';
+    boton2.style = 'margin-left: 10px; margin-top: 215px; width:35px; height:25px;';
+
+    boton3 = document.createElement("button");
+    boton3.type = "button";
+    boton3.id = '3';
+    boton3.style = 'margin-left:auto; margin-right: auto; width:30px; height:20px;';
+    boton3.innerText = '3';
+
+    boton4 = document.createElement("button");
+    boton4.type = "button";
+    boton4.id = '4';
+    boton4.style = 'margin-left:auto; margin-right: auto;width:30px; height:20px;';
+    boton4.innerText = '4';*/
+
+    let currentDiv = document.getElementById("fila1");
+    document.body.insertBefore(boton1, currentDiv);
+  }
+
+  function init() {
+    let button = document.getElementById("button");
+    // button.addEventListener('click', creaCalcu);
+    button.addEventListener("click", addElement);
+    button.addEventListener("click", fila2);
+  }
 }
