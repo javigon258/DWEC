@@ -9,33 +9,29 @@
  */
 
 {
-    let creaVentana;
-    let creaVentana1;
-    let btcerrar;
     let button;
-
+    let arr = 0;
+    let izq = 0;
     
     function abrirVentana() {
-        for (let i = 1; i < 5; i++) {
-            creaVentana = document.open('', 'Ventana' + i , 'width=200','height=200','top=15'+5,'left=10'+5);
+        for (let i = 0; i < 5; i++) {
+            let creaVentana = document.open('', '' , 'width=200,height=100,top='+(arr+=15)+',left='+(izq+=10)+'');
             creaVentana.document.write( 
-                "<html lang='en'>"
-                + "<head>"
-                + "  <meta charset='UTF-8'>"
-                + "  <meta name='viewport' content='width=device-width, initial-scale=1.0'>"
-                + "  <meta http-equiv='X-UA-Compatible' content='ie=edge'>"
-                + "  <title>VEntana "+ i +" </title>"
-                + "  <script src='multiVentana.js'></script>" 
-                + "</head>"
-                + "  <body>"
-                + "  <p>Ventana "+ i +" </p>"
-                //+ "  <button id=cierra>Cerrar</button>"
-                + "  <input type=\"button\" id=\"cierra\" value=\"Cerrar\">"
-                + "  </body>"
-                + "</html>"
-            );
+                `<html lang='en'>
+                <head>
+                  <meta charset='UTF-8'>
+                  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+                  <title>VEntana ${i + 1} </title>
+                  <script src='cierraVentana.js'>
+                  </script> 
+                </head>
+                  <body>
+                  <p>Ventana  ${i + 1}  </p>
+                  <button onclick='cerrarVentana();' id='cierra'>Cerrar</button>
+                  </body>
+                </html>`);
         }
-        
     }
 
     function cerrarVentana(){
@@ -45,8 +41,6 @@
     function init() {
         button = document.getElementById("button");
         button.addEventListener('click', abrirVentana);
-        btcerrar = document.getElementById("cierra");
-        btcerrar.addEventListener('click', cerrarVentana);
     }
 
     document.addEventListener("DOMContentLoaded", init);
