@@ -1,15 +1,25 @@
 {
-
-    function recogerValores(){
-        window.setTimeout();
-        document.getElementById("hostnm").innerHTML = "<b>Hostname: </b>" + location.hostname;
-        document.getElementById("href").innerHTML = "<b>URL completa: </b>" + location.href;
-        document.getElementById("origin").innerHTML = "<b>Origin: </b>" + location.origin;
-        document.getElementById("pathname").innerHTML = "<b>Ruta ejercicio: </b>" + location.pathname;
-        document.getElementById("protocol").innerHTML = "<b>Protocolo: </b>" + location.protocol;
+    function comienza() {
+        let ahora = new Date();
+        let h = ahora.getHours();
+        let m = ahora.getMinutes();
+        let s = ahora.getSeconds();
+        // add a zero in front of numbers<10
+        m = compruebaHora(m);
+        s = compruebaHora(s);
+        document.getElementById("tiempo").innerHTML = h + ":" + m + ":" + s;
+        let t = setTimeout(function(){ comienza() }, 500);
     }
+    
+    function compruebaHora(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
     function init() {
-       recogerValores();
+        comienza();
     }
 
     document.addEventListener("DOMContentLoaded", init);

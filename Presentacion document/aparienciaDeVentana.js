@@ -22,7 +22,6 @@
       }
       */
     function init() {
-        let button = document.getElementById("button");
-        button.addEventListener('click', comprobacion);
+        document.getElementById("button").addEventListener('click', comprobacion);
     }
 }
