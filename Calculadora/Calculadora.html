@@ -6,34 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculadora</title>
+    <script defer src="archivo.js"></script>
     <style>
-    #nuevaCalcu{
-        position: absolute;
-        width: 15%;
-        height: 50%;
-        left: 50%;
-        top: 35%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        border: 1px solid black;
-    }
-    #fila1{
-        width: 200px;
-        height: 35px;
-        margin-top: 215px;
-        margin-left: 575px;
-        border: 1px solid black;
-    }
+        .calculadora {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .texto {
+            text-align: center;
+            margin: 3px 3px;
+            width: 170px;
+            height: 20px;
+        }
+
+        .button {
+            width: 45px;
+            height: 28px;
+            margin: 2px;
+            font-size: 10px;
+        }
     </style>
-    <script src="archivo.js"></script>
 </head>
 
 <body>
-
-    <input type="button" value="creacalcu" id="button"><br><br><br><br><br><br>
-    <div id="nuevaCalcu"></div>
-    <div id="fila1"></div>
-
 </body>
 
 </html>
