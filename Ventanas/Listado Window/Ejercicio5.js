@@ -7,7 +7,6 @@
         m = compruebaHora(m);
         s = compruebaHora(s);
         document.getElementById("tiempo").innerHTML = h + ":" + m + ":" + s;
-        setTimeout(function(){ comienza() }, 500);
     }
     
     function compruebaHora(i) {
@@ -18,9 +17,8 @@
     }
 
     function init() {
-        comienza();
+        setInterval(comienza,500);
     }
 
     document.addEventListener("DOMContentLoaded", init);
-
 }
