@@ -1,23 +1,4 @@
 {
-    /*function mostrarLista(){
-        newLista = document.getElementById("lista");
-        newLista.document.createElement();
-    }*/
-    let ventana;
-    /*let creaVentana;
-    function abrirVentana() {
-        creaVentana = document.open('https://www.w3schools.com', 'Ejemplo', 'width=300,height=450,top=0,left=0');
-    }
-
-    function deglosarUrl() {
-        creaVentana = document.open('https://www.w3schools.com', 'Ejemplo', 'width=300,height=450,top=0,left=550');
-        //creaVentana.
-    }
-
-    function desplazar(){
-        creaVentana.scrollTo(600,100)
-    }*/
-
     function recogerValores(){
         document.getElementById('lista').innerHTML = 
             "window.outerHeight " + window.outerHeight+ ",tiene la altura en pixeles de toda la ventana del navegador"+"<br>"
@@ -27,11 +8,6 @@
             + "window.document.clientHeight " + window.document.clientHeight + " ,la opción se encuentra deprecated.";
     }
     function init() {
-        /*let otro = document.getElementsByTagName("scrol");
-        let button = document.getElementById("button");
-        button.addEventListener('click', abrirVentana);
-        otro.addEventListener('click', desplazar);
-        */
        recogerValores();
     }
 
