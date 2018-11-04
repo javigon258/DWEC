@@ -1,5 +1,7 @@
 {
   let numer;
+  let mostrar;
+
   function comprobaciones() { 
     numer = [];
     for (let i = 0; i < 15; i++) {
@@ -8,11 +10,16 @@
   }
 
   function recorrer(value,index){
-    document.getElementById("resp1").innerHTML = "Numeros ["+index+"]: " +value;
+    mostrar = document.getElementById("resp1");
+    mostrar.innerHTML = mostrar.innerHTML + "Numeros ["+index+"]: " +value +"<br>";
   }
 
-  function init() {
+  function nuevo(){
     numer.forEach(recorrer);
+  }
+  
+  function init() {
+    nuevo();
   }
 
   document.addEventListener("DOMContentLoaded", init);

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="Ejercicio1.js"></script>
+    <title>Ejercicio 1</title>
+    <style>
+        #sign {
+            font-weight: bold;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+    <p>1. ¿Cuántos constructores tiene el objeto predefinido Date()? Explícalos mediante ejemplos.</p>
+
+    <p>Hay 4 tipos de forma de instanciar un fecha:</p>
+
+    <p> <span id="sign">var d = new Date()</span>, nos devuelve el nombre del dia de la semana, el mes, el dia, el año
+        y la hora actual.</p>
+    <span id="resp1"></span>
+
+    <p> <span id="sign">var da = new Date(2018, 11, 24, 10, 33, 30, 0)</span>,
+        podemos espeficar los siete números son: el año, mes, día, hora, minuto, segundo y milisegundo (en ese orden).
+    </p>
+    <span id="resp2"></span>
+
+    <p> <span id="sign">var da = new Date("December 3, 2018 11:13:00");</span>,
+        podemos espeficamos new Date (dateString) crea un nuevo objeto de fecha a partir de una cadena de fecha. </p>
+    <span id="resp3"></span>
+
+    <p> <span id="sign">var da = new Date(1527003831000);</span>,
+        podemos espeficamos new Date (milisegundos) crea un nuevo objeto de fecha como tiempo cero más milisegundos.
+    </p>
+    <span id="resp4"></span>
+</body>
+
+</html>
