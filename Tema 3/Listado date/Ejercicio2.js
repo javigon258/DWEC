@@ -5,7 +5,7 @@
     let sd = new Date();
     result += sd.getFullYear()+"/"+(sd.getMonth()+1)+"/"+sd.getDate() + 
               " "+ sd.getHours()+":"+sd.getMinutes()+":"+
-              sd.getSeconds()+" "+sd.getMilliseconds();
+              sd.getSeconds();
     return result;
   }
   function valores(){
