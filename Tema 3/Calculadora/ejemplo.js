@@ -33,7 +33,7 @@
         document.body.appendChild(contenido);
     }
 
-    function funcionalidad(){
+    function comprobacion(){
         texto = document.getElementsByClassName("texto")[0];
             if(!isNaN(parseInt(this.value))){
                 if(comprueba){
@@ -132,7 +132,7 @@
         crearCalculadora();
         let input = document.getElementsByTagName("input");
         Array.prototype.forEach.call(input, element => {
-            element.addEventListener('click', funcionalidad);
+            element.addEventListener('click', comprobacion);
         });
     }
     document.addEventListener("DOMContentLoaded", init)
