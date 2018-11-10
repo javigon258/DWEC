@@ -20,6 +20,10 @@
         input.type = 'text';
         input.value = 0;
         input.className = 'texto';
+        input.style.textAlign = 'right';
+        input.style.width = "75%";
+        input.style.height = "22px";
+        input.style.margin = "11px 10px 11px 10px";
         elementos.appendChild(input);
         contenido.appendChild(elementos);
         
