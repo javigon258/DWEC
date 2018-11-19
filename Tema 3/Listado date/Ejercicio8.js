@@ -1,7 +1,7 @@
 {
   function calculaEdad(año,mes,dia){
     try {
-      let fecha = new Date(año,(mes-1),dia);
+      let fecha = new Date(año,mes,dia);
       let fechaAct = new Date();
       let añoAct = fechaAct.getFullYear();
       if((añoAct - año) < 0){

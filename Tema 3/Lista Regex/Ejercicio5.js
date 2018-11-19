@@ -8,7 +8,7 @@ function prueba() {
 
   document.getElementById("prue1").innerHTML = "Respuesta de la expresion normal ,str.match(/[abc]/gi): " + match 
   +"<br> El primer index de regexp: str.indexOf(match[0]): "+ firstIndex +"<br> La otra expresion para buacar el ultimo index, str.lastIndexOf(match[match.length-1]): "+lastIndex;
-  document.getElementById("prue2").innerHTML = "Esta es la frase que prueba: de ejemplo"+str;
+  document.getElementById("prue2").innerHTML = "Esta es la frase que prueba: de ejemplo "+ str;
 }
 
   function init() {
