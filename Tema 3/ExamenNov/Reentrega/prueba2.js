@@ -96,9 +96,6 @@
         throw miErrorException;
       }
 
-      // ejercicio 3
-
-      //console.log(setValidate);
     } catch (e) {
       if (e instanceof ErrorException) {
         spanError.textContent = e.message;
