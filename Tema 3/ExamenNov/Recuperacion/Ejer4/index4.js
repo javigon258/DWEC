@@ -27,7 +27,13 @@
             opc = "no"; 
         document.getElementById('respuesta').textContent = "La frase "+ frase +" "+opc+ " es un palídromo";
     }
-
+    
+    document.getElementById("refAtras").addEventListener("click", atras);
+    
+    function atras(event) {
+        event.preventDefault();
+        history.back();
+    }
     document.addEventListener("DOMContentLoaded",init);
 
 }

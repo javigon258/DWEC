@@ -6,9 +6,15 @@
     function guardarDatos(){
         let data = document.getElementById("informacion").value;
         localStorage.setItem("misdatos", data);
+        document.getElementById("refAtras").addEventListener("click", atras);
 
         document.getElementById("informacion").value = null;
-        }
+    }
+
+    function atras(event) {
+        event.preventDefault();
+        history.back();
+    }
        
     function mostrarDatos(){
         document.getElementById("informacion").value = localStorage.getItem("misdatos");

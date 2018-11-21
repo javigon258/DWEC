@@ -20,4 +20,11 @@
         console.log(e.name);     // 'MyError'
         console.log(e.message);  // 'custom message'
     }
+
+    document.getElementById("refAtras").addEventListener("click", atras);
+    
+    function atras(event) {
+        event.preventDefault();
+        history.back();
+    }
 }
