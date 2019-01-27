@@ -49,15 +49,15 @@
     }
 
     function jugar() {
-        gato.jugar();
         actualizaDatos();
+        gato.jugar();
         accionImg.innerHTML = `<img src="./image/jugando.jpg">`;
         compruebaEstado();
     }
 
     function comer() {
-        gato.comer();
         actualizaDatos();
+        gato.comer();
         accionImg.innerHTML = `<img src="./image/comer.jpg">`;
         compruebaEstado();
     }
@@ -68,7 +68,7 @@
     }
 
     function compruebaEstado() {
-        if (gato.enfermo()) {
+        if (gato.isEnfermo()) {
             accionImg.innerHTML = `<img src="./image/enfermo.jpg">`;
             nombre.innerHTML = "<b>Nombre: </b> "+ gato.getNombre();
             fechaNac.innerHTML = '<b>Fecha de Nacimiento: </b>' + gato.getFecha() +' <b>Edad:</b> ' + gato.edad + ' años';

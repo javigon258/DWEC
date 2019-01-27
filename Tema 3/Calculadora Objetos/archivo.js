@@ -20,6 +20,7 @@
         input.type = 'text';
         input.value = 0;
         input.className = 'texto';
+        
         input.style.textAlign = 'right';
         input.style.width = "75%";
         input.style.height = "22px";

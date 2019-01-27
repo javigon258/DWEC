@@ -1,0 +1,43 @@
+main{
+    text-align: center;
+}
+#linfactura,#datEmpresa,#datClien{
+    background-color: #D5F5E3;
+    display: inline-block;
+    padding: 25px;
+    width: 500px;
+    margin-left: 0 auto;
+}
+#datEmpresa,#datClien{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+h2{
+    text-align: center;
+}
+input[type=date]{
+    border: none;
+    font-size: 1.1em;
+    width: 116px;
+}
+#moneda{
+    border: none;
+    width: 80px;
+    text-align: center;
+}
+#nuevaLinea{
+    background-color: #D5F5E3;
+    display: inline-block;
+    text-align: center;
+}
+#unidsClien,#descClien,#ivaClien{
+    width: 30px;
+}
+#obserc{
+    background-color: #D5F5E3;
+    display: inline-block;
+    padding: 25px;
+    width: 500px;
+    text-align: left;
+}

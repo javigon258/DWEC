@@ -90,7 +90,8 @@
             for (let j = 0; j < matriz[1].length; j++) {
                 inputs = nuevo.appendChild(document.createElement('input'))
                 inputs.type = 'submit';
-                inputs.value = '';
+                inputs.id = i + "_"+ j;
+                inputs.value = "";
                 inputs.valor = matriz[i][j];
                 inputs.style.width = 12.5 + "%";
                 inputs.style.height = 62.5 + 'px';

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="js/main.js"></script>
+    <script src="js/reserva.js"></script>
+    <title>Reentrega Examen Diciembre</title>
+    <link rel="stylesheet" href="css/estilo.css">
+  </head>
+  <body>
+    <noscript>
+        Mensaje que deberia mostraria si el navegador no es compatible con javascript.
+    </noscript>
+
+    <h1>Javier González Guzmán</h1>
+    <form>
+      <p>
+        Nombre completo: <input type="text" name="" id="nombre" />
+        <span id="errnombre"></span>
+      </p>
+      <p>
+        Correo electrónico: <input type="text" name="" id="email" />
+        <span id="erremail"></span>
+      </p>
+      <p>
+        Fecha de llegada: <input type="text" name="" id="fechaLlegada" />
+        <span id="errfechaLlegada"></span>
+      </p>
+      <p>
+        Hora de llegada: <input type="text" name="" id="horaLlegada" />
+        <span id="errhoraLlegada"></span>
+      </p>
+      <p>
+        Número de noches: <input type="text" name="" id="numNoches" />
+        <span id="errnumNoches"></span>
+      </p>
+      <p>
+        Número de personas: <input type="text" name="" id="numPersonas" />
+        <span id="errnumPersonas"></span>
+      </p>
+      
+        <label>Servicio de restaurante: </label> 
+        <p>Desayuno<input type="checkbox" name="" id="desayuno" value="Desayuno" />
+        Almuerzo<input type="checkbox" name="almuerzo" id="" value="Almuerzo" />
+        Cena<input type="checkbox" name="" id="cena" value="Cena" />
+        <span id="errservicio"></span>
+      </p>
+      <p>
+        <label>Edad cliente:</label> 
+        <p>
+        Menos de 20<input type="radio" name="radio" id="menos20" value="Menos de 20" checked />
+        Menos de 20 y más de 40<input type="radio" name="radio" id="mas20men40" value="Más de 20 y menos de 40" />
+        Más de 40 <input type="radio" name="radio" id="mas40" value="Más de 40" />
+        <span id="erredad"></span>
+      </p>
+    </form>
+    <p><button id="enviar">Realizar reserva</button></p>
+  </body>
+</html>

@@ -1,35 +1,68 @@
 {
-  String.prototype.truncar = function(lon) {
-    lon = lon || 10;
-    if (this.length > lon) {
-      return this.substring(0, lon);
-    } else {
-      return this;
-    }
+  function Cliente(nombre, direccion, telefono, nif) {
+    this.nombre = nombre;
+    this.direccion = direccion;
+    this.telefono = telefono;
+    this.nif = nif;
   }
 
-  let cadena = "hola mundo";
-  document.getElementById("resp").innerHTML = cadena.truncar(6);
-
-  String.prototype.truncar2 = function(lon, ind) {
-    lon = lon || 10;
-    ind = ind || '...';
-
-    if (this.length > lon) {
-        return this.substring(0, lon-ind.length) + ind;
-    } else {
-      return this;
-    }
+  // Definición de la clase Elemento
+  function Elemento(descripcion, cantidad, precio) {
+    this.descripcion = descripcion;
+    this.cantidad = cantidad;
+    this.precio = precio;
   }
 
-  var cadena = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.";
-  document.getElementById("fecha").innerHTML = cadena.truncar2(50, '... (sigue)');
-  
-  //alert(cadena.truncar(50));
+  // Definición de la clase Factura
+  function Factura(cliente, elementos) {
+    this.cliente = cliente;
+    this.elementos = elementos;
+    this.informacion = {
+      baseImponible: 0,
+      iva: 16,
+      total: 0,
+      formaPago: "contado"
+    };
+  }
+
+  // La información de la empresa que emite la factura se
+  // añade al prototype porque se supone que no cambia
+  Factura.prototype.empresa = {
+    nombre: "Nombre de la empresa",
+    direccion: "Direccion de la empresa",
+    telefono: "900900900",
+    nif: "XXXXXXXX"
+
+  };
+
+  // Métodos añadidos al prototype de la Factura
+  Factura.prototype.calculaTotal = function() {
+    for (let i = 0; i < this.elementos.length; i++) {
+      this.informacion.baseImponible +=
+        this.elementos[i].cantidad * this.elementos[i].precio;
+    }
+    this.informacion.total =
+      this.informacion.baseImponible * this.informacion.iva;
+  };
+
+  Factura.prototype.muestraTotal = function() {
+    this.calculaTotal();
+    //let date = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+    document.getElementById("resp").innerHTML = "TOTAL = " + this.informacion.total + " euros";
+  };
+
+  // Creación de una factura
+  let elCliente = new Cliente("Cliente 1", "", "", "");
+  let losElementos = [
+    new Elemento("elemento1", "1", "5"),
+    new Elemento("elemento2", "2", "12"),
+    new Elemento("elemento3", "3", "42")
+  ];
+
 
   function init() {
-    truncar2();
-    truncar();
+    let laFactura = new Factura(elCliente, losElementos);
+    laFactura.muestraTotal();
   }
 
   document.addEventListener("DOMContentLoaded", init);

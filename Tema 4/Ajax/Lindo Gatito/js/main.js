@@ -3,7 +3,7 @@
      * @author Javier González
      */
     function lindoGatito(){
-        window.open("gatos.html","_SELF")
+        window.open("gatos.html","_blank")
     }
 
     function init(){

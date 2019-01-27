@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javier Gonzalez Guzman</title>
+    <script src="js/main.js"></script>
+    <script src="js/archivo.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+<body>
+    <h1>Examen Diciembre de 2018</h1>
+    <h2>Formulario de reservas</h2>
+    
+    <p>
+        <label>Nombre: </label>
+        <input type="text" name="" id="nombre">
+        <span id="errNombre">  </span>
+    </p>
+    <p>
+        <label>Email: </label>
+        <input type="text" name="" id="email">
+        <span id="errEmail">  </span>
+    </p>     
+    <p>
+        <label>Fecha de llegada: </label>
+        <input type="date" name="" id="FechaLleg">
+        <span id="errFechaLleg">  </span>
+    </p>
+    <p>
+        <label>Hora de llegada: </label>
+        <input type="time" name="" id="horaLleg">
+        <span id="errHoraLleg">  </span>
+    </p>
+    <p>
+        <label>Numero de noches: </label>
+        <input type="number" min="1" max="30" name="" id="numNoches">
+        <span id="errNumNoches">  </span>
+    </p>
+    <p>
+        <label>Numero de personas: </label>
+        <input type="number" name=""  min="1" max="5" id="numPers">
+        <span id="errNumPers">  </span>
+    </p>
+    <div id="servicios">
+        <p>Servicio de restaurante:</p>
+        <input type="checkbox" name="servic" id="desayuno"> <label>Desayuno</label><br>
+        <input type="checkbox" name="servic" id="almuerzo"> <label>Almuerzo</label><br>
+        <input type="checkbox" name="servic" id="cena"> <label>Cena</label><br>
+        <span id="errServicios">  </span>
+    </div>
+    <div id="edadesCli">
+        <p>Edad del Cliente:</p>
+        <input type="radio" name="edades" value="20" id="menos20"> <label>Menos de 20</label><br>
+        <input type="radio" name="edades" value="2040" id="en20y40"> <label>Entre 20 y 40</label><br>
+        <input type="radio" name="edades" value="40" id="mas40"> <label>Más de 40</label><br>
+        <span id="errEdadCli">  </span>
+    </div>
+    <input type="button" id="enviar" value="Enviar reserva">
+</body>
+</html>

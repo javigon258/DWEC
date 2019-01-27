@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Factura</title>
+    <script src="js/archivo.js"></script>
+  </head>
+  <body>
+    <noscript>
+      Mensaje que deberia mostraria si el navegador no es compatible con
+      javascript.
+    </noscript>
+    <main>
+      <div id="linfactura">
+        <label>Fecha:</label>
+        <input type="date" name="fecha" value="" id="fecha" required />
+        <label>Moneda:</label>
+        <input type="text" name="moneda" id="moneda" value="Euros" required />
+      </div>
+      <br />
+      <div id="datEmpresa">
+        <h2>Datos de empresa</h2>
+        <label>Nombre:</label>
+        <input type="text" name="nombreEmpr" value="" id="nombEmpr" required />
+        <label>Dirección:</label>
+        <input type="text" name="direccEmpr" id="direccEmpr" required /><br />
+        <label>Correo:</label>
+        <input type="email" name="emailEmpr" value="" id="emailEmpr" required />
+        <label>C.I.F.:</label>
+        <input type="text" name="cifEmpr" id="cifEmpr" required /><br />
+        <label>Telefono:</label>
+        <input
+          type="tel"
+          name="telfEmpr"
+          value=""
+          id="telfEmpr"
+          required
+        /><br />
+        <input type="button" value="Guardar" />
+        <input type="button" value="Limpiar datos" />
+      </div>
+      <div id="datClien">
+        <h2>Datos de cliente</h2>
+        <label>Nombre:</label>
+        <input
+          type="text"
+          name="nombreClien"
+          value=""
+          id="nombClien"
+          required
+        />
+        <label>Dirección:</label>
+        <input type="text" name="direccClien" id="direccClien" required /><br />
+        <label>Correo:</label>
+        <input
+          type="email"
+          name="emailClien"
+          value=""
+          id="emailClien"
+          required
+        />
+        <label>C.I.F.:</label>
+        <input type="text" name="cifClien" id="cifClien" required /><br />
+        <label>Telefono:</label>
+        <input
+          type="tel"
+          name="telfClien"
+          value=""
+          id="telfClien"
+          required
+        /><br />
+        <input type="button" value="Guardar" />
+        <input type="button" value="Limpiar datos" />
+      </div>
+      <div id="nuevaLinea">
+        <table id="customers">
+          <tr>
+            <th>Descripcion/Producto</th>
+            <th>Unidades</th>
+            <th>Descuento</th>
+            <th>Precio</th>
+            <th>Iva</th>
+            <th>Importe</th>
+          </tr>
+          <tr>
+            <td><input type="text" name="cifClien" id="cifClien" required /></td>
+            <td><input type="number" name="unidsClien" id="unidsClien" required /></td>
+            <td><input type="number" name="descClien" id="descClien" required /></td>
+            <td><input type="number" name="precClien" id="precClien" required /></td>
+            <td><input type="number" name="ivaClien" id="ivaClien" required /></td>
+            <td><input type="number" name="ImporClien" id="ImporClien" required /></td>
+          </tr>
+          <tr>
+              <td><input type="button" value="Nueva linea"></td>
+          </tr>
+        </table>
+      </div><br>
+      <td><input type="button" id="precioProducto" value="crearFactura"></td>
+
+<!--      <div id="obserc">
+            <label>Observaciones</label><br>
+            <textarea name="observ" id="" cols="40" rows="8"></textarea>
+            <label>I.R.P.F</label>
+            <input type="number" name="tipoIrpf" id="tipoIrpf" required />
+            <label>R.E.</label>
+            <input type="number" name="tipoRE" value="" id="tipoRE" required/>
+            <p>TOTAL (EUROS):</p>
+      </div>-->
+    </main>
+  </body>
+</html>
