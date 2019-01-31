@@ -33,6 +33,7 @@ let buscaminas = {
     },
 
     picar(x, y) {
+        
         if (buscaminas.tableroDescubierto[x][y] === "m") {
             buscaminas.banderaFinalizar = true;
             throw new Error("Boooooooom!!!");
@@ -40,13 +41,17 @@ let buscaminas = {
 
         if (buscaminas.banderaGanado || buscaminas.banderaFinalizar)
             return true;
-
-        buscaminas.descrubirCeros(x, y);
-        buscaminas.tableroCasillaAlmacenado[x][y] = "pul";
-        buscaminas.casillaPulsada.add(x + "-" + y);
-        buscaminas.actualizaTablero();
-        buscaminas.mostrar();
-        buscaminas.compruebaVictoria();
+        else{
+            console.log("Tablero Descubierto");
+            console.table(buscaminas.tableroDescubierto);
+            console.log("Tablero Normal");
+            console.table(buscaminas.tableroParaJugar);
+            buscaminas.muestraCeros(x, y);
+            buscaminas.tableroCasillaAlmacenado[x][y] = "pul";
+            buscaminas.casillaPulsada.add(x + "-" + y);
+            buscaminas.actualizaTablero();
+            buscaminas.compruebaVictoria();
+        }
     },
 
     marcar(x, y) {
@@ -114,30 +119,30 @@ let buscaminas = {
     },
 
     casillasPulsadas() {
-        let contador = 0;
+        let cont = 0;
         for (let i = 0; i < buscaminas.filas; i++) {
             for (let j = 0; j < buscaminas.columnas; j++) {
                 if (buscaminas.tableroCasillaAlmacenado[i][j] === "pul")
-                    contador++;
+                    cont++;
             }
         }
-        return contador;
+        return cont;
     },
-    casillasPulsadasVictoria() {
-        let contador = 0;
+    huecosPulsadosParaGanar() {
+        let cont = 0;
         for (let i = 0; i < buscaminas.filas; i++) {
             for (let j = 0; j < buscaminas.columnas; j++) {
                 if (buscaminas.tableroDescubierto[i][j] !== "m")
-                    contador++;
+                    cont++;
             }
         }
-        return contador;
+        return cont;
     },
 
     compruebaVictoria() {
-        if (buscaminas.casillasPulsadas() === buscaminas.casillasPulsadasVictoria()) {
+        if (buscaminas.casillasPulsadas() === buscaminas.huecosPulsadosParaGanar()) {
             buscaminas.banderaGanado = true;
-            throw new Error("Ganador");
+            throw new Error("has hanado");
         }
     },
 
@@ -221,7 +226,7 @@ let buscaminas = {
         }
     },
 
-    descrubirCeros(x, y) {
+    muestraCeros(x, y) {
         if (buscaminas.tableroDescubiertoCopia[x][y] === 0) {
             buscaminas.tableroDescubiertoCopia[x][y] = -1;
             if (buscaminas.tableroDescubierto[x][y] === 0) {
@@ -229,15 +234,15 @@ let buscaminas = {
                     for (let k = Math.max(y - 1, 0); k <= Math.min(y + 1, buscaminas.columnas - 1); k++) {
                         buscaminas.tableroCasillaAlmacenado[j][k] = "pul";
                         buscaminas.casillaPulsada.add(j + "-" + k);
-                        buscaminas.descrubirCeros(j, k);
+                        buscaminas.muestraCeros(j, k);
                     }
             }
         }
     },
 
-    cuentaMinas(inicioX, inicioY, finalX, finalY) {
-        for (let i = inicioX; i <= finalX; i++) {
-            for (let j = inicioY; j <= finalY; j++) {
+    cuentaMinas(iX, iY, fX, fY) {
+        for (let i = iX; i <= fX; i++) {
+            for (let j = iY; j <= fY; j++) {
                 if (buscaminas.tableroDescubierto[i][j] !== "m") {
                     if (buscaminas.tableroDescubierto[i][j] === 0) {
                         buscaminas.tableroDescubierto[i][j] = 0 + 1;

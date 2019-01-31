@@ -1,76 +1,72 @@
 
-let $buscaminasInterfaz;
+let $bInterfaz;
 let $fila;
 let $columna;
 
 let animaciones = function () {
-   $("#botonesNivel").change(buscaminasGui.comenzarJuego);
-   $buscaminasInterfaz = $("#buscaminasInterfaz");
-   $("#record").change(buscaminasGui.partidas);
+   $("#botonesNivel").change(buscaminasInterfaz.comenzarJuego);
+   $bInterfaz = $("#bInterfaz");
+   $("#record").change(buscaminasInterfaz.partidas);
 }
 
-let buscaminasGui = {
+let buscaminasInterfaz = {
    comenzarJuego() {
       buscaminas.elegirNivel($(this).val());
       $(this).css("display", "none");
       buscaminas.init();
-      buscaminasGui.generarTableroIntefaz();
-      buscaminasGui.eliminaMenuContextual();
-      $("#banderas").text(" " + buscaminas.banderas);
-      buscaminasGui.partidas();
-   },
 
+      buscaminasInterfaz.generarTablero();
+     // buscaminasInterfaz.eliminaMenuContextual();
+      $("#banderas").text(" " + buscaminas.banderas);
+      buscaminasInterfaz.partidasRecord();
+   },
+/*
    eliminaMenuContextual() {
-      $buscaminasInterfaz.contextmenu(function (event) {
+      $bInterfaz.contextmenu(function (event) {
          event.preventDefault();
       })
-   },
+   },*/
 
-   generarTableroIntefaz() {
-      $buscaminasInterfaz.css({
+   generarTablero() {
+      $bInterfaz.css({
          "display": "grid",
          "grid-template-columns": "repeat(" + buscaminas.columnas + " ,0.5fr)",
-         "width": "100%"
+         "width": "100%",
       });
-
       for (let i = 0; i < buscaminas.filas; i++) {
          for (let j = 0; j < buscaminas.columnas; j++) {
-
             let $input = $(`<input type='text' id='${i}-${j}' readOnly></input>`);
-            $buscaminasInterfaz.append($input);
-
+            $bInterfaz.append($input);
          }
       }
       $input = $("input");
 
       $input.click(function () {
-         buscaminasGui.picar($(this));
-
+         buscaminasInterfaz.picar($(this));
       })
       $input.mousedown(function (event) {
-         buscaminasGui.marcar(event, $(this));
+         buscaminasInterfaz.marcar(event, $(this));
       })
    },
 
    picar(id) {
-      buscaminasGui.filaColumna(id);
+      buscaminasInterfaz.filaColumna(id);
       try {
          if (buscaminas.tableroParaJugar[$fila][$columna] === "b")
             return true; 
          else {
             buscaminas.picar($fila, $columna);
-            buscaminasGui.actualizarTablero();
+            buscaminasInterfaz.actualizarTablero();
          }
       } catch (error) {
          $("h2").text(error.message);
-         buscaminasGui.descubrirMinas();
+         buscaminasInterfaz.descubrirMinas();
       }
    },
 
    marcar(event, id) {
-      buscaminasGui.filaColumna(id);
+      buscaminasInterfaz.filaColumna(id);
       let $id = $("#" + $fila + "-" + $columna);
-
       try {
          if (event.buttons === 2) {
             buscaminas.marcar($fila, $columna);
@@ -84,7 +80,7 @@ let buscaminasGui = {
             } else {
                $("#banderas").text(" " + buscaminas.banderas);
                $id.css({
-                  "background-color": "blue",
+                  "background-color": "rgb(5, 121, 254)",
                   "transition-duration": "1s"
                })
             }
@@ -93,21 +89,21 @@ let buscaminasGui = {
          $("h2").text(error.message);
       }
    },
-   partidas() {
-      let contador = localStorage.getItem("partidas");
-      contador = (contador === null) ? 0 : parseInt(contador);
-      $("#record").text(contador);
+   partidasRecord() {
+      let cont = localStorage.getItem("partidas");
+      cont = (cont === null) ? 0 : parseInt(cont);
+      $("#record").text(cont);
       if (buscaminas.banderaGanado)
-         localStorage.setItem("partidas", ++contador);
+         localStorage.setItem("partidas", ++cont);
       else
-         localStorage.setItem("partidas", contador); 
+         localStorage.setItem("partidas", cont); 
    },
 
    descubrirMinas() {
-      let contador = 0;
+      let cont = 0;
       for (let i = 0; i < buscaminas.filas; i++) {
          for (let j = 0; j < buscaminas.columnas; j++) {
-            contador += 0.25;
+            cont += 0.10;
 
             let $id = $("#" + i + "-" + j)
             $id.prop("disabled", true); 
@@ -116,7 +112,7 @@ let buscaminasGui = {
             if (buscaminas.tableroDescubierto[i][j] === "m") {
                $id.css({
                   "background-color": "#FF4136",
-                  "transition-duration": "0" + contador + "s",
+                  "transition-duration": "0" + cont + "s",
                   "transform": "scale(1.1)",
                   "animation": " 2s shake infinite linear",
                   "transform": "translate3d(0, 0, 0)",
@@ -127,14 +123,14 @@ let buscaminasGui = {
             }
          }
       }
-      buscaminasGui.partidas();
-      buscaminasGui.recargarPagina();
+      buscaminasInterfaz.partidasRecord();
+      buscaminasInterfaz.recargarPagina();
    },
 
    actualizarTablero() {
-      let contador = 0.05;
+      let cont = 0.05;
       for (const coordenada of buscaminas.casillaPulsada) {
-         contador += 0.15;
+         cont += 0.05;
          let i = coordenada.split("-")[0];
          let j = coordenada.split("-")[1];
 
@@ -146,9 +142,10 @@ let buscaminasGui = {
          else
             $valor.val(buscaminas.tableroParaJugar[i][j]);
          $valor.css({
+            //"position": "relative",
             "background-color": "rgb(47, 249, 54)",
-            "transform": "rotate(-360deg)",
-            "transition-duration": "0" + contador + "s"
+            "animation" : "flip "+cont+"s linear both",
+            "transition-duration": "0" + cont + "s"
          });
       }
    },
