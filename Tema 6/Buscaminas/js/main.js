@@ -50,15 +50,12 @@ let buscaminasGui = {
       $input.mousedown(function (event) {
          buscaminasGui.marcar(event, $(this));
       })
-      $input.mousedown(function (event) {
-         buscaminasGui.despejar(event, $(this));
-      })
    },
 
    picar(id) {
       buscaminasGui.filaColumna(id);
       try {
-         if (buscaminas.tableroJugable[$fila][$columna] === "b")
+         if (buscaminas.tableroParaJugar[$fila][$columna] === "b")
             return true; 
          else {
             buscaminas.picar($fila, $columna);
@@ -77,7 +74,7 @@ let buscaminasGui = {
       try {
          if (event.buttons === 2) {
             buscaminas.marcar($fila, $columna);
-            if (buscaminas.tableroJugable[$fila][$columna] === "b") {
+            if (buscaminas.tableroParaJugar[$fila][$columna] === "b") {
                console.log("Coloco bandera");
                $("#banderas").text(" " + buscaminas.banderas);
                $id.css({
@@ -96,24 +93,7 @@ let buscaminasGui = {
          $("h2").text(error.message);
       }
    },
-
-   despejar(event, id){
-      buscaminasGui.filaColumna(id);
-
-      try {
-         if (event.buttons === 3 || event.buttons === 4) {
-            console.log("boton 4");
-            buscaminas.despejar($fila, $columna);
-            buscaminasGui.actualizarTablero();
-         }
-      } catch (error) {
-         $("h2").text(error.message);
-         buscaminasGui.descubrirMinas();
-      }
-   },
-
    partidas() {
-
       let contador = localStorage.getItem("partidas");
       contador = (contador === null) ? 0 : parseInt(contador);
       $("#record").text(contador);
@@ -161,12 +141,12 @@ let buscaminasGui = {
          let $valor = $("#" + i + "-" + j)
          $valor.off(); 
 
-         if (buscaminas.tableroJugable[i][j] === 0)
+         if (buscaminas.tableroParaJugar[i][j] === 0)
             $valor.val("");
          else
-            $valor.val(buscaminas.tableroJugable[i][j]);
+            $valor.val(buscaminas.tableroParaJugar[i][j]);
          $valor.css({
-            "background-color": "rgb(5, 121, 254)",
+            "background-color": "rgb(47, 249, 54)",
             "transform": "rotate(-360deg)",
             "transition-duration": "0" + contador + "s"
          });
