@@ -124,7 +124,7 @@ let buscaminasInterfaz = {
          }
       }
       buscaminasInterfaz.partidasRecord();
-      buscaminasInterfaz.recargarPagina();
+      buscaminasInterfaz.reiniciaPartida();
    },
 
    actualizarTablero() {
@@ -157,7 +157,7 @@ let buscaminasInterfaz = {
    /**
     * Recarga la página al perder la partida.
     */
-   recargarPagina() {
+   reiniciaPartida() {
       $('#reiniciar').click(function () {
          location.reload();
       });
